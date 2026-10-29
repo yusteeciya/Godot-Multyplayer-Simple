@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d0oipaq3wsqva"]
+
+[ext_resource type="Script" uid="uid://kbwcv6u4msrd" path="res://network_manager.gd" id="1_v3k62"]
+
+[node name="NetworkManager" type="Node2D" unique_id=274990954 node_paths=PackedStringArray("btn_host", "btn_join")]
+script = ExtResource("1_v3k62")
+btn_host = NodePath("CreateGame")
+btn_join = NodePath("ConnectGame")
+
+[node name="CreateGame" type="Button" parent="." unique_id=1408304618]
+offset_left = 413.0
+offset_top = 296.0
+offset_right = 762.0
+offset_bottom = 365.0
+text = "Create game"
+
+[node name="ConnectGame" type="Button" parent="." unique_id=1850209726]
+offset_left = 413.0
+offset_top = 380.0
+offset_right = 762.0
+offset_bottom = 449.0
+text = "Connect game"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=296198217]
+spawn_path = NodePath("..")
+
+[connection signal="pressed" from="CreateGame" to="." method="_on_btn_host_pressed"]
+[connection signal="pressed" from="ConnectGame" to="." method="_on_btn_join_pressed"]

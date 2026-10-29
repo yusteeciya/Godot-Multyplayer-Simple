@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ct748t0isqsmm"]
+
+[ext_resource type="Script" uid="uid://cwhat8l2l53hc" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrvp2"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xrvp2"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4flbx"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:health")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpt0g"]
+albedo_color = Color(1, 0.14509805, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xrvp2"]
+material = SubResource("StandardMaterial3D_dpt0g")
+
+[node name="Player" type="CharacterBody3D" unique_id=343950848]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=934663922]
+shape = SubResource("CapsuleShape3D_xrvp2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=863003992]
+mesh = SubResource("CapsuleMesh_xrvp2")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=2006511060]
+replication_config = SubResource("SceneReplicationConfig_4flbx")
+
+[node name="CameraBoom" type="Node3D" parent="." unique_id=1754858051]
+
+[node name="Camera3D" type="Camera3D" parent="CameraBoom" unique_id=2077314862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 4)
+
+[node name="Eye" type="Node3D" parent="." unique_id=694750164]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Eye" unique_id=830567963]
+transform = Transform3D(0.3601116, 0, 0, 0, 0.3601116, 0, 0, 0, 0.3601116, 0.16468573, 0.47294283, -0.4483273)
+mesh = SubResource("SphereMesh_xrvp2")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Eye" unique_id=1381083859]
+transform = Transform3D(0.3601116, 0, 0, 0, 0.3601116, 0, 0, 0, 0.3601116, -0.23426437, 0.47294283, -0.4483273)
+mesh = SubResource("SphereMesh_xrvp2")
