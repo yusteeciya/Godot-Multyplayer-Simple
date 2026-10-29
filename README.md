@@ -18,8 +18,7 @@ Godot Engine 4.7의 내장 고성능 멀티플레이어 API(MultiplayerAPI 및 E
 
 ⚙️ 설치 및 실행 방법
 
-1. 저장소 클론:bash
-git clone https://github.com/yusteeciya/Godot-Multyplayer-Simple
+1. 저장소 클론: git clone https://github.com/yusteeciya/Godot-Multyplayer-Simple
 2. 프로젝트 열기: Godot Engine(4.x 버전)에서 해당 프로젝트를 불러옵니다.
 3. 멀티플레이어 테스트 (단일 PC 기준):
 	• Godot 에디터 상단의 디버그(Debug) -> 여러 인스턴스 실행(Run Multiple Instances) 메뉴로 이동합니다.
