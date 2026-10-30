@@ -88,6 +88,6 @@ func respawn_player():
 	
 	var random_x = randf_range(-10, 10)
 	var random_z = randf_range(-10, 10)
-	global_position = Vector3(random_x, 5.0, random_z) # Спавним чуть в воздухе, чтобы он упал на землю
+	global_position = Vector3(random_x, 5.0, random_z)
 	
 	print("Player ", name, " spawned to  ", global_position)
